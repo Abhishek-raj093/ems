@@ -1,8 +1,17 @@
+// localStorage.clear()
+
 const employees = [
     {
       "Id": 1,
+      "firstName": "Aarav",
       "email": "employee1@example.com",
       "password": "123",
+      "taskCounts": {
+        "active": 1,
+        "newTask": 1,
+        "completed": 1,
+        "failed": 0
+      },
       "tasks": [
         {
           "taskTitle": "Update landing page UI",
@@ -38,8 +47,15 @@ const employees = [
     },
     {
       "Id": 2,
+      "firstName": "Neha",
       "email": "employee2@example.com",
       "password": "123",
+      "taskCounts": {
+        "active": 1,
+        "newTask": 1,
+        "completed": 1,
+        "failed": 1
+      },
       "tasks": [
         {
           "taskTitle": "Prepare sprint report",
@@ -85,8 +101,15 @@ const employees = [
     },
     {
       "Id": 3,
+      "firstName": "Rohan",
       "email": "employee3@example.com",
       "password": "123",
+      "taskCounts": {
+        "active": 1,
+        "newTask": 1,
+        "completed": 1,
+        "failed": 1
+      },
       "tasks": [
         {
           "taskTitle": "Create onboarding flow",
@@ -132,8 +155,15 @@ const employees = [
     },
     {
       "Id": 4,
+      "firstName": "Ishita",
       "email": "employee4@example.com",
       "password": "123",
+      "taskCounts": {
+        "active": 1,
+        "newTask": 1,
+        "completed": 1,
+        "failed": 0
+      },
       "tasks": [
         {
           "taskTitle": "Fix alignment bug",
@@ -169,8 +199,15 @@ const employees = [
     },
     {
       "Id": 5,
+      "firstName": "Karan",
       "email": "employee5@example.com",
       "password": "123",
+      "taskCounts": {
+        "active": 1,
+        "newTask": 1,
+        "completed": 1,
+        "failed": 1
+      },
       "tasks": [
         {
           "taskTitle": "Sync with marketing",
@@ -219,10 +256,11 @@ const employees = [
   const admin = [
     {
       "Id": 1,
+    //   "firstName": "Vikram",
       "email": "admin@example.com",
       "password": "123"
     }
-  ];
+  ];  
 
   export const setLocalStorage = () => {
         localStorage.setItem('employees', JSON.stringify(employees))
@@ -233,5 +271,5 @@ const employees = [
     const employees = JSON.parse(localStorage.getItem('employees'))
     const admin = JSON.parse(localStorage.getItem('admin'))
 
-    console.log(employees, admin)
+    return {employees, admin}
   }
